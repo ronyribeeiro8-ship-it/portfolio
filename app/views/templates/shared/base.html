@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>{% block title %}Portfólio{% endblock %}</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}"/>
+  {% block extra_css %}{% endblock %}
+</head>
+<body>
+
+<canvas id="mx"></canvas>
+
+<nav>
+  <a href="{{ url_for('home.index') }}" class="logo">&lt;dev /&gt;</a>
+  <ul class="nav-links">
+    <li><a href="{{ url_for('home.sobre') }}" {% if request.endpoint == 'home.sobre' %}class="active"{% endif %}>sobre</a></li>
+    <li><a href="{{ url_for('projects.index') }}" {% if 'projects' in request.endpoint %}class="active"{% endif %}>projetos</a></li>
+    <li><a href="{{ url_for('contact.index') }}" {% if 'contact' in request.endpoint %}class="nav-cta"{% else %}class="nav-cta"{% endif %}>contato</a></li>
+  </ul>
+</nav>
+
+{% with messages = get_flashed_messages(with_categories=true) %}
+  {% if messages %}
+    <div class="flash-container">
+      {% for category, message in messages %}
+        <div class="flash flash-{{ category }}">{{ message }}</div>
+      {% endfor %}
+    </div>
+  {% endif %}
+{% endwith %}
+
+<main>
+  {% block content %}{% endblock %}
+</main>
+
+<footer>
+  <p>© Dev Portfólio · Construído com Python + Flask · <span class="foot-code">{ código + café }</span></p>
+</footer>
+
+<script src="{{ url_for('static', filename='js/matrix.js') }}"></script>
+<script src="{{ url_for('static', filename='js/main.js') }}"></script>
+{% block extra_js %}{% endblock %}
+</body>
+</html>

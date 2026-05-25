@@ -1,0 +1,23 @@
+{% extends "shared/base.html" %}
+{% block title %}Stack — {{ dev.name }}{% endblock %}
+
+{% block content %}
+<section class="sec" id="skills">
+  <div class="container">
+    <div class="sec-hdr"><span class="sec-tag">01 /</span><h2 class="sec-title">Stack técnica</h2></div>
+    <div class="skills-list">
+      {% for s in dev.skills %}
+      <div class="skill-item">
+        <div class="skill-hdr">
+          <span class="skill-name">{{ s.name }}</span>
+          <span class="skill-pct">{{ s.level }}%</span>
+        </div>
+        <div class="skill-bar">
+          <div class="skill-fill" style="width: {{ s.level }}%;"></div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% endblock %}

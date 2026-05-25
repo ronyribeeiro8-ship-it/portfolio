@@ -1,0 +1,22 @@
+{% extends "shared/base.html" %}
+{% block title %}{{ dev.name }} — Portfólio{% endblock %}
+
+{% block content %}
+<section class="hero" id="hero">
+  <div class="hero-content">
+    <p class="hero-pre">// desenvolvedor disponível para projetos</p>
+    <h1 class="hero-name">{{ dev.name }}</h1>
+    <h2 class="hero-title">{{ dev.title }}</h2>
+    <p class="hero-tagline">{{ dev.tagline }}</p>
+    <div class="hero-actions">
+      <a href="{{ url_for('projects.index') }}" class="btn btn-p">Ver Projetos</a>
+      <a href="{{ url_for('contact.index') }}"  class="btn btn-g">Falar Comigo</a>
+    </div>
+  </div>
+  <div class="badge">
+    <span class="badge-ring"></span>
+    <span class="badge-ring ring2"></span>
+    <span class="badge-text">DISPONÍVEL</span>
+  </div>
+</section>
+{% endblock %}

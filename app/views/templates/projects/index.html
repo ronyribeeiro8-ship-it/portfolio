@@ -1,0 +1,26 @@
+{% extends "shared/base.html" %}
+{% block title %}Projetos — Portfólio{% endblock %}
+
+{% block content %}
+<section class="sec sec-dark" id="projetos">
+  <div class="container">
+    <div class="sec-hdr"><span class="sec-tag">02 /</span><h2 class="sec-title">Projetos</h2></div>
+    <div class="proj-grid">
+      {% for p in projects %}
+      <article class="card" data-i="{{ loop.index }}">
+        <div class="card-top">
+          <span class="card-idx">{{ "%02d" % loop.index }}</span>
+          <a href="{{ url_for('projects.detail', project_id=loop.index0) }}" class="card-lnk">&#8599;</a>
+        </div>
+        <h3 class="card-title">{{ p.title }}</h3>
+        <p class="card-desc">{{ p.description }}</p>
+        <div class="card-result">▶ {{ p.result }}</div>
+        <div class="tags">
+          {% for t in p.tags %}<span class="tag">{{ t }}</span>{% endfor %}
+        </div>
+      </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% endblock %}

@@ -1,0 +1,34 @@
+{% extends "shared/base.html" %}
+{% block title %}Contato — Portfólio{% endblock %}
+
+{% block content %}
+<section class="sec sec-dark" id="contato">
+  <div class="container contact-wrap">
+    <div class="sec-hdr"><span class="sec-tag">04 /</span><h2 class="sec-title">Vamos trabalhar juntos</h2></div>
+    <p class="contact-sub">Tem um projeto em mente? Me manda uma mensagem e te respondo em até 24 horas.</p>
+
+    <form class="contact-form" action="{{ url_for('contact.send') }}" method="POST">
+      <div class="form-group">
+        <label for="name">Nome</label>
+        <input type="text" id="name" name="name" placeholder="Seu nome" required/>
+      </div>
+      <div class="form-group">
+        <label for="email">E-mail</label>
+        <input type="email" id="email" name="email" placeholder="seu@email.com" required/>
+      </div>
+      <div class="form-group">
+        <label for="message">Mensagem</label>
+        <textarea id="message" name="message" rows="5" placeholder="Descreva seu projeto..." required></textarea>
+      </div>
+      <button type="submit" class="btn btn-p">Enviar Mensagem</button>
+    </form>
+
+    <div class="contact-links" style="margin-top:3rem">
+      <a href="{{ dev.whatsapp }}" target="_blank" class="cbtn"><span class="cbtn-icon">💬</span>Whatsapp</a>
+      <a href="mailto:{{ dev.email }}" class="cbtn"><span class="cbtn-icon">✉</span>{{ dev.email }}</a>
+      <a href="{{ dev.github }}"   target="_blank" class="cbtn"><span class="cbtn-icon">⌥</span>GitHub</a>
+      
+    </div>
+  </div>
+</section>
+{% endblock %}

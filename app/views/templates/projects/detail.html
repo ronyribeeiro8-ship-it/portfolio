@@ -1,0 +1,39 @@
+{% extends "shared/base.html" %}
+{% block title %}{{ project.title }} — Portfólio{% endblock %}
+
+{% block content %}
+<section class="sec" id="projeto-detalhe">
+  <div class="container" style="max-width:760px">
+    <a href="{{ url_for('projects.index') }}" class="back-link">← Voltar para projetos</a>
+
+    <div class="sec-hdr" style="margin-top:2rem">
+      <span class="sec-tag">{{ "%02d" % (project_id + 1) }} /</span>
+      <h2 class="sec-title">{{ project.title }}</h2>
+    </div>
+
+    <p class="detail-desc">{{ project.description }}</p>
+
+    <div class="detail-result">
+      <span class="result-label">Resultado alcançado</span>
+      <span class="result-value">▶ {{ project.result }}</span>
+    </div>
+
+    <div class="detail-tags">
+      <span class="detail-label">Tecnologias</span>
+      <div class="tags" style="margin-top:.8rem">
+        {% for t in project.tags %}<span class="tag">{{ t }}</span>{% endfor %}
+      </div>
+    </div>
+
+    {% if project.link != "#" %}
+    <a href="{{ project.link }}" target="_blank" class="btn btn-p" style="margin-top:2rem;display:inline-flex">
+      Acessar Projeto &#8599;
+    </a>
+    {% endif %}
+
+    <a href="{{ url_for('contact.index') }}" class="btn btn-p" style="margin-top:3rem;display:inline-flex">
+      Contratar para projeto similar
+    </a>
+  </div>
+</section>
+{% endblock %}
