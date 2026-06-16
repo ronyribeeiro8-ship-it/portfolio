@@ -12,6 +12,7 @@ class Developer:
         )
         self.email = "ronyribeeiro8@gmail.com"
         self.github = "https://github.com/ronyribeeiro8-ship-it"
+        self.linkedin = "https://www.linkedin.com/in/rony-ribeiro-47b3a4201"
         self.skills = [
             {"name": "Python / Flask ", "level": 85},
             {"name": "JavaScript ",    "level": 58},

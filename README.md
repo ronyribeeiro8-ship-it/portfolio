@@ -105,7 +105,7 @@ self.name     = "Seu Nome"
 self.title    = "Sua Especialidade"
 self.email    = "voce@email.com"
 self.github   = "https://github.com/seuperfil"
-#self.linkedin = "https://linkedin.com/in/seuperfil"
+self.linkedin = "https://linkedin.com/in/seuperfil"
 ```
 
 **Seus projetos** → `app/models/project.py`, método `ProjectRepository.get_all()`

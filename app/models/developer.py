@@ -6,6 +6,7 @@ class Developer:
         self.title = "Desenvolvedor Full Stack"
         self.tagline = "Construindo sistemas robustos. Entregando resultados reais."
         self.email = "ronyribeeiro8@gmail.com"
+        self.linkedin = "https://www.linkedin.com/in/rony-ribeiro-47b3a4201"
         self.github = "https://github.com/ronyribeeiro8-ship-it"
         self.whatsapp = "https://wa.me/55994094719"
         self.skills = [

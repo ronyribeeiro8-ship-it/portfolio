@@ -7,7 +7,7 @@
     <div class="sec-hdr"><span class="sec-tag">04 /</span><h2 class="sec-title">Vamos trabalhar juntos</h2></div>
     <p class="contact-sub">Tem um projeto em mente? Me manda uma mensagem e te respondo em até 24 horas.</p>
 
-    <form class="contact-form" action="{{ url_for('contact.send') }}" method="POST">
+    <!-- <form class="contact-form" action="{{ url_for('contact.send') }}" method="POST">
       <div class="form-group">
         <label for="name">Nome</label>
         <input type="text" id="name" name="name" placeholder="Seu nome" required/>
@@ -21,11 +21,12 @@
         <textarea id="message" name="message" rows="5" placeholder="Descreva seu projeto..." required></textarea>
       </div>
       <button type="submit" class="btn btn-p">Enviar Mensagem</button>
-    </form>
+    </form> -->
 
     <div class="contact-links" style="margin-top:3rem">
       <a href="{{ dev.whatsapp }}" target="_blank" class="cbtn"><span class="cbtn-icon">💬</span>Whatsapp</a>
       <a href="mailto:{{ dev.email }}" class="cbtn"><span class="cbtn-icon">✉</span>{{ dev.email }}</a>
+      <a href="{{ dev.linkedin }}" target="_blank" class="cbtn"><span class="cbtn-icon">🔗</span>Linkedin<a></a>
       <a href="{{ dev.github }}"   target="_blank" class="cbtn"><span class="cbtn-icon">⌥</span>GitHub</a>
       
     </div>
