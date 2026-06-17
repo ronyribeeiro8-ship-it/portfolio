@@ -57,6 +57,16 @@ main { padding-top: 70px; }
 .hero-tagline { font-size: 1.05rem; color: var(--text-dim); max-width: 500px; margin-bottom: 2.5rem; opacity: 0; animation: fadeUp .7s .65s forwards; }
 .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; opacity: 0; animation: fadeUp .7s .8s forwards; }
 
+.hero-media { display: flex; flex-direction: column; align-items: center; gap: 1.3rem; width: 100%; max-width: 420px; opacity: 0; animation: fadeUp .7s 1s forwards; }
+.hero-photo { width: 100%; border: 1px solid rgba(0,255,136,.15); border-radius: 30px; background: linear-gradient(180deg, rgba(0,255,136,.06), rgba(5,10,14,.85)); padding: 1.5rem; box-shadow: 0 24px 80px rgba(0,0,0,.25); transition: transform var(--t), border-color var(--t), box-shadow var(--t); }
+.hero-photo:hover { transform: translateY(-4px); border-color: rgba(0,255,136,.35); box-shadow: 0 30px 90px rgba(0,255,136,.18); }
+.hero-photo-link { display: block; text-decoration: none; }
+.hero-photo-frame { width: 100%; aspect-ratio: 4 / 5; border-radius: 26px; overflow: hidden; background: radial-gradient(circle at top left, rgba(0,255,136,.25), transparent 40%), linear-gradient(180deg, #0d1b24 0%, #071116 100%); display: flex; align-items: flex-end; justify-content: flex-start; padding: 1.5rem; position: relative; }
+.hero-photo-img { width: 100%; height: 100%; display: flex; align-items: flex-end; justify-content: flex-start; position: relative; }
+.hero-photo-label { font-family: var(--mono); font-size: .95rem; text-transform: uppercase; letter-spacing: .18em; color: var(--white); background: rgba(0,0,0,.35); padding: .75rem 1rem; border-radius: 999px; box-shadow: 0 10px 30px rgba(0,0,0,.3); }
+.hero-photo-tip { margin-top: .7rem; font-size: .9rem; color: var(--text-dim); max-width: 220px; line-height: 1.45; }
+.hero-photo-btn { width: 100%; justify-content: center; margin-top: 1rem; }
+
 .btn { display: inline-flex; align-items: center; padding: .85rem 2rem; border-radius: var(--r); font-family: var(--ui); font-size: .95rem; font-weight: 700; text-decoration: none; letter-spacing: .04em; transition: all var(--t); cursor: pointer; border: none; }
 .btn-p { background: var(--green); color: var(--bg); border: 2px solid var(--green); box-shadow: 0 0 24px var(--green-glow); }
 .btn-p:hover { background: transparent; color: var(--green); }
